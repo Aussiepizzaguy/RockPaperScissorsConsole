@@ -50,11 +50,23 @@ function getComputerChoice () {
      alert (`the computer chose ${comp} and you chose ${play}.You Lost! Difficult difficult lemon difficult`);
      compscore= ++compscore;   
     }
-    alert (`your score:${playerscore} computer score ${compscore}`)
    }
  
 //This is where the round gets played...I just added the player selection and the computer choice into the play round function//
-playRound (playerSelection (), getComputerChoice () )
+//playRound (playerSelection (), getComputerChoice () )//
    
-  
+  //create a function called game that plays the round until 5 rounds have been played//
 
+  function game () {
+   for (let i=0; i < 5; i++) {
+    playRound (playerSelection (), getComputerChoice () )
+    alert (`your score:${playerscore} computer score ${compscore}`)
+    }
+    if (compscore > playerscore) {
+        alert("You lost this one!")
+    } else {
+        alert ("You win!!!")
+    }
+  }
+
+  game ();
